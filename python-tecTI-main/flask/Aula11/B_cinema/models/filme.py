@@ -6,8 +6,10 @@ class Filme(ModeloBase):
     __tablename__ = "filmes"
 
     titulo = db.Column(db.String(150), nullable=False)
-    # TODO ALUNO: duracao_min (Integer), classificacao (String 5)
-    # TODO ALUNO: relationship sessoes
+    duracao_min = db.Column(db.Integer, nullable=False)
+    classificacao = db.Column(db.String(5), nullable=False)
+
+    sessoes = db.relationship("Sessao", back_populates="filme")
 
     @classmethod
     def listar(cls):
