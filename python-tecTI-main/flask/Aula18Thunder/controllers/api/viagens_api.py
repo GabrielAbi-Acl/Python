@@ -3,8 +3,8 @@ from flask import Blueprint, jsonify, request
 from models import Viajante, Viagem, db
 from services import buscar_clima_destino
 
-api_bp = Blueprint("api", __name__, url_prefix="/api")
 
+api_bp = Blueprint("api", __name__, url_prefix="/api")
 
 @api_bp.route("/viajantes", methods=["GET"])
 def listar_viajantes():
